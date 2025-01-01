@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="✨ Level up your life with ancient wisdom made simple! Join Gita108 for bite-sized spiritual growth." />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <title>Gita108 Wisdom Club | Beginners Guide to Bhagavad Gita</title>
+    <style>
+        :root {
+            --accent: 191, 123, 5;
+            --accent-light: 255, 183, 77;
+            --accent-dark: 87, 43, 0;
+            --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%
+            );
+        }
+
+        html {
+            font-family: 'Young Serif', serif;
+            background: #13151a;
+            background-size: 224px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Young Serif', serif;
+        }
+
+        p, li {
+            font-family: system-ui, sans-serif;
+        }
+
+        main {
+            margin: auto;
+            padding: 1rem;
+            width: 1000px;
+            max-width: calc(100% - 2rem);
+            color: white;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes countUp {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-count-up {
+            animation: countUp 0.5s ease-out forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .stagger-children > * {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: rgb(var(--accent-light));
+        }
+
+        .text-gradient {
+            background-image: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400%;
+            background-position: 0%;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: rgba(var(--accent-dark), 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(var(--accent-dark), 0.4);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 4rem 0;
+            background: rgba(var(--accent-dark), 0.2);
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .timeline-item {
+            background: rgba(var(--accent-dark), 0.4);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .week {
+            color: rgb(var(--accent-light));
+            font-weight: bold;
+        }
+
+        /* Teachers Section */
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            padding: 2rem;
+        }
+
+        .teacher-card {
+            text-align: center;
+            background: rgba(var(--accent-dark), 0.2);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .teacher-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid rgb(var(--accent-light));
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 0;
+            background: rgba(var(--accent-dark), 0.2);
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: rgb(var(--accent-light));
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .testimonial-card {
+            background: rgba(var(--accent-dark), 0.2);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background: rgba(var(--accent-dark), 0.2);
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .faq-item {
+            background: rgba(var(--accent-dark), 0.4);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateX(10px);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: rgb(var(--accent-light));
+        }
+
+        .faq-item p {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        /* Join Section */
+        .join-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-icon {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>✨ Welcome to <span class="text-gradient">Gita108</span> ✨</h1>
+            <p class="tagline">Ancient wisdom for the modern soul 🌟</p>
+        </div>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <h2>🌈 Why Gita is Your Ultimate Life Hack 🚀</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧘‍♀️</div>
+                    <h3>Stress? Never heard of her</h3>
+                    <p>Learn epic stress management techniques that actually work IRL</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Main Character Energy</h3>
+                    <p>Discover your purpose and slay your life goals like the boss you are</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💫</div>
+                    <h3>Emotional Intelligence 100</h3>
+                    <p>Level up your EQ and handle relationships like a pro</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Productivity Queen/King</h3>
+                    <p>Get that work-life balance without the burnout</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌟</div>
+                    <h3>Self-Love Master</h3>
+                    <p>Build unshakeable confidence and self-worth</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎭</div>
+                    <h3>Karma Clarity</h3>
+                    <p>Understand how your actions shape your reality</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline stagger-children">
+            <h2>✨ Your Journey to Enlightenment 🌟</h2>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <span class="week">Week 1-2</span>
+                    <h3>🌱 Foundation Vibes</h3>
+                    <p>Get the basics down & understand your spiritual assignment</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="week">Week 3-4</span>
+                    <h3>🧘‍♀️ Mind Mastery</h3>
+                    <p>Level up your meditation game & stress management</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="week">Week 5-6</span>
+                    <h3>💫 Karma & Purpose</h3>
+                    <p>Discover your life's mission & slay your goals</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="week">Week 7-8</span>
+                    <h3>✨ Ultimate Transformation</h3>
+                    <p>Put it all together & become your highest self</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teachers Section -->
+        <section class="teachers">
+            <h2>🌟 Meet Your Spiritual Guides 🌟</h2>
+            <div class="teachers-grid stagger-children">
+                <div class="teacher-card">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=guru1" alt="Guru Ji" class="teacher-avatar">
+                    <h3>Shivprakash yadav ✨</h3>
+                    <p>Your vibe curator & meditation expert 🧘‍♀️</p>
+                </div>
+                <div class="teacher-card">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=guru2" alt="Acharya Ji" class="teacher-avatar">
+                    <h3>Dhiraj Soni 🌟</h3>
+                    <p>Sanskrit scholar & wisdom keeper 📚</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-grid stagger-children">
+                <div class="stat-card animate-count-up">
+                    <span class="stat-number">1000+</span>
+                    <p>Students Enlightened 🎓</p>
+                </div>
+                <div class="stat-card animate-count-up">
+                    <span class="stat-number">50+</span>
+                    <p>Live Sessions 🎯</p>
+                </div>
+                <div class="stat-card animate-count-up">
+                    <span class="stat-number">4.9</span>
+                    <p>Star Rating ⭐</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>💫 Vibe Check from Our Squad 💫</h2>
+            <div class="testimonials-grid stagger-children">
+                <div class="testimonial-card">
+                    <p>"No cap, this course changed my life! The meditation tips are straight fire 🔥"</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=test1" alt="Student" class="author-avatar">
+                        <div>
+                            <h4>Priya S. ✨</h4>
+                            <span>Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Fr fr, the way they explain karma is so relatable! Big W for spiritual growth 💯"</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=test2" alt="Student" class="author-avatar">
+                        <div>
+                            <h4>Rahul K. 🌟</h4>
+                            <span>Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The community is literally everything! Found my spiritual besties here 💕"</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=test3" alt="Student" class="author-avatar">
+                        <div>
+                            <h4>Ananya M. ⭐</h4>
+                            <span>Student</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>🤔 Common Questions</h2>
+            <div class="faq-grid stagger-children">
+                <details class="faq-item">
+                    <summary>How long is the course? ⏰</summary>
+                    <p>The main course runs for 8 weeks, but you get lifetime access to stay connected with the squad! 💫</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I need prior knowledge? 📚</summary>
+                    <p>Zero! Just bring your good vibes and curiosity - we'll handle the rest! ✨</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How do I join the sessions? 🎯</summary>
+                    <p>All sessions are on WhatsApp! Join our group and you're set to level up! 🚀</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What's the investment? 💎</summary>
+                    <p>DM us for current rates - we keep it affordable for the squad! 💫</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Join Section -->
+        <section class="join-section animate-fade-in">
+            <h2>Ready to Glow Different? ✨</h2>
+            <p>Join the coolest spiritual squad and level up your life! 🌟</p>
+            <a href="https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv" target="_blank" rel="noopener noreferrer" class="cta-button animate-pulse">
+                <span class="whatsapp-icon">💬</span> Join our WhatsApp Squad ✨
+            </a>
+        </section>
+    </main>
+</body>
+</html>
