@@ -141,6 +141,12 @@
             font-size: 2em;
             margin-bottom: 15px;
         }
+        .benefit-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
 
         /* Stats Grid */
 .stats-grid {
@@ -218,12 +224,12 @@
             margin-bottom: 15px;
         }
         .teacher-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes the image circular */
-    margin-bottom: 15px;
-    object-fit: cover; /* Ensures the image is cropped correctly */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        width: 100px;
+         height: 100px;
+        border-radius: 50%; /* Makes the image circular */
+         margin-bottom: 15px;
+         object-fit: cover; /* Ensures the image is cropped correctly */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
 
@@ -295,6 +301,48 @@
             animation: fadeIn 0.5s ease;
         }
 
+            /* Bounce Animation */
+        @keyframes bounce {
+               0%, 100% {
+                     transform: translateY(0);
+                          }
+                 50% {
+                  transform: translateY(-10px);
+             }
+            }
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+/* Spin Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
         @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -306,6 +354,74 @@
         background-position: 0% 50%;
     }
 }
+    /* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+/* Wobble Animation */
+@keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+.wobble {
+    animation: wobble 1s infinite;
+}
+
+/* Flip Animation */
+@keyframes flip {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.flip {
+    animation: flip 1.5s infinite;
+}
+
+/* Swing Animation */
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.swing {
+    animation: swing 2s infinite;
+}
+
+/* Fade Animation */
+@keyframes fade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.fade {
+    animation: fade 2s infinite;
+}
+
+/* Zoom Animation */
+@keyframes zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+.zoom {
+    animation: zoom 1.5s infinite;
+}
+
 
         @keyframes fadeIn {
             from {
@@ -411,6 +527,15 @@
                 grid-template-columns: 1fr;
             }
         }
+        * Position the Toggle Button at the Bottom-Right for Mobile Screens */
+@media (max-width: 768px) {
+    .toggle-button {
+        top: unset; /* Remove the top property */
+        bottom: calc(20px + env(safe-area-inset-bottom)); /* Handle safe area */
+        right: calc(20px + env(safe-area-inset-right)); /* Handle safe area */
+        transform: none; /* No horizontal transformation */
+    }
+}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
@@ -469,12 +594,12 @@
             <h2>🌈 Why Gita is Your Ultimate Life Hack 🚀</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
+                    <span class="benefit-icon swing">🎯</span><!--<div class="benefit-icon">🎯</div>-->
                     <h3>Decision Making</h3>
                     <p>Master strategic thinking and ethical decision-making for career growth and personal life</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🧘‍♀️</div>
+                    <span class="benefit-icon zoom">🧘‍♀️</span>
                     <h3>Inner Peace Mastery</h3>
                     <p>Ancient meditation techniques that work for modern life stress</p>
                 </div>
