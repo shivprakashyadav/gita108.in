@@ -463,25 +463,44 @@
             }
         }
 
-        /* Toggle Button */
+      
+        /* Toggle Button Styles */
         .toggle-button {
             position: fixed;
-            top: 20px;
+            top: 20px; /* Default position for desktop */
             right: 20px;
             padding: 12px;
             border-radius: 50%;
             border: none;
             cursor: pointer;
             font-size: 20px;
-            z-index: 1000;
-            background: rgb(var(--dark-card));
-            color: rgb(var(--dark-text));
+            background: var(--dark-card);
+            color: var(--dark-text);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .light-mode .toggle-button {
             background: rgb(var(--light-card));
             color: rgb(var(--light-text));
+        }
+        /* Position Adjustments for Mobile Screens */
+        @media (max-width: 768px) 
+        {
+            .toggle-button {
+                top: unset; /* Remove top positioning */
+                bottom: 20px; /* Move to the bottom for mobile */
+                right: 20px;
+            }
+
+            /* Support for Safe Area Insets on iPhones */
+            @supports (padding: env(safe-area-inset-bottom)) {
+                .toggle-button {
+                    bottom: calc(20px + env(safe-area-inset-bottom));
+                    right: calc(20px + env(safe-area-inset-right));
+                }
+            }
         }
 
         /* Join Section */
@@ -527,15 +546,7 @@
                 grid-template-columns: 1fr;
             }
         }
-        * Position the Toggle Button at the Bottom-Right for Mobile Screens */
-@media (max-width: 768px) {
-    .toggle-button {
-        top: unset; /* Remove the top property */
-        bottom: calc(20px + env(safe-area-inset-bottom)); /* Handle safe area */
-        right: calc(20px + env(safe-area-inset-right)); /* Handle safe area */
-        transform: none; /* No horizontal transformation */
-    }
-}
+     
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
