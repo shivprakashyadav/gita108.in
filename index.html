@@ -546,6 +546,47 @@
                 grid-template-columns: 1fr;
             }
         }
+         .ticker {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    font-size: 1.2em;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    bottom: 10px; /* Default for desktops */
+}
+
+/* Apply styles for mobile devices */
+@media (max-width: 768px) {
+    .ticker {
+        top: 0; /* Move to the top on mobile */
+        bottom: unset; /* Remove bottom positioning */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adjust shadow */
+    }
+}
+
+
+        .ticker p {
+            display: inline-block;
+            animation: tickerMove 15s linear infinite;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        @keyframes tickerMove {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
      
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -777,6 +818,9 @@
             <p>Join the coolest spiritual squad and level up your life! 🌟 It's your time to grow!</p>
             <a href="https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv" target="_blank" rel="noopener noreferrer" class="cta-button"> 💬 Join our WhatsApp Squad ✨ </a>
         </section>
+         <div class="ticker">
+        <p>🌟 Join now! Enhance your life with Gita108 wisdom. Click the "Join Now" button to start your journey! 🌟</p>
+    </div>
     </main>
 </body>
 </html>
