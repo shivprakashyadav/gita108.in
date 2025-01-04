@@ -546,44 +546,67 @@
                 grid-template-columns: 1fr;
             }
         }
-         .ticker {
-    position: fixed;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 1);
-    color: white;
-    font-size: 1.2em;
-    overflow: hidden;
-    white-space: nowrap;
-    z-index: 1000;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    bottom: 10px; /* Default for desktops */
-}
-
-/* Apply styles for mobile devices */
-@media (max-width: 768px) {
-    .ticker {
-        top: 0; /* Move to the top on mobile */
-        bottom: unset; /* Remove bottom positioning */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adjust shadow */
-    }
-}
-
-
-        .ticker p {
-            display: inline-block;
-            animation: tickerMove 15s linear infinite;
-            margin: 0;
-            padding: 0 20px;
+            /* Add new ticker styles */
+        .ticker-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            padding: 12px 0;
         }
 
-        @keyframes tickerMove {
-            from {
-                transform: translateX(100%);
+        .dark-mode .ticker-wrapper {
+            background: linear-gradient(90deg, rgba(var(--dark-primary), 0.95), rgba(var(--dark-primary), 0.8));
+            color: rgb(var(--dark-secondary));
+        }
+
+        .light-mode .ticker-wrapper {
+            background: linear-gradient(90deg, rgba(var(--light-primary), 0.95), rgba(var(--light-primary), 0.8));
+            color: rgb(var(--light-text));
+        }
+
+        .ticker-container {
+            display: flex;
+            width: fit-content;
+            animation: tickerScroll 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            white-space: nowrap;
+            font-size: 1.1em;
+        }
+
+        .ticker-item span {
+            margin: 0 8px;
+        }
+
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(0);
             }
-            to {
-                transform: translateX(-100%);
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        /* Mobile responsiveness for ticker */
+        @media (max-width: 768px) {
+            .ticker-wrapper {
+                top: 0;
+                bottom: unset;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+            
+            @supports (padding: env(safe-area-inset-top)) {
+                .ticker-wrapper {
+                    padding-top: calc(12px + env(safe-area-inset-top));
+                }
             }
         }
 
@@ -818,9 +841,33 @@
             <p>Join the coolest spiritual squad and level up your life! 🌟 It's your time to grow!</p>
             <a href="https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv" target="_blank" rel="noopener noreferrer" class="cta-button"> 💬 Join our WhatsApp Squad ✨ </a>
         </section>
-         <div class="ticker">
-        <p>🌟 Join now! Enhance your life with Gita108 wisdom. Click the "Join Now" button to start your journey! 🌟</p>
-    </div>
+        <div class="ticker-wrapper">
+            <div class="ticker-container">
+                <!-- First set of items -->
+                <div class="ticker-item">
+                    <span>✨ Join Gita108 Today!</span>
+                    <span>🎯 Master Life's Challenges</span>
+                    <span>🧘‍♀️ Find Inner Peace</span>
+                    <span>💫 Transform Your Life</span>
+                    <span>✨ Limited spots available!</span>
+                    <span>🌟 Live Sessions Available</span>
+                    <span>⚡ Boost Your Spiritual Growth</span>
+                    <span>❤️ Join Our Community</span>
+                </div>
+                
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-item">
+                    <span>✨ Join Gita108 Today!</span>
+                    <span>🎯 Master Life's Challenges</span>
+                    <span>🧘‍♀️ Find Inner Peace</span>
+                    <span>💫 Transform Your Life</span>
+                    <span>✨ Limited spots available!</span>
+                    <span>🌟 Live Sessions Available</span>
+                    <span>⚡ Boost Your Spiritual Growth</span>
+                    <span>❤️ Join Our Community</span>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
