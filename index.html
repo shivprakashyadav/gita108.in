@@ -529,7 +529,7 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 1.8em;
             }
             
             main {
@@ -548,10 +548,16 @@
             /* Benefits Grid */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
             gap: 20px;
             padding: 0px;
             animation: fadeInUp 2s ease-out;
+        }
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            animation: fadeInUp 2.5s ease-out;
         }
 
         }
