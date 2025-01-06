@@ -467,7 +467,7 @@
         /* Toggle Button Styles */
         .toggle-button {
             position: fixed;
-            top: 20px; /* Default position for desktop */
+            top: 60px; /* Default position for desktop */
             right: 20px;
             padding: 12px;
             border-radius: 50%;
@@ -558,24 +558,25 @@
             /* Add new ticker styles */
         .ticker-wrapper {
             position: fixed;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
             overflow: hidden;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            
             z-index: 1000;
             backdrop-filter: blur(5px);
             padding: 5px 0;
         }
 
         .dark-mode .ticker-wrapper {
-            background: linear-gradient(90deg, rgba(var(--dark-primary), 0.95), rgba(var(--dark-primary), 0.8));
-            color: rgb(var(--dark-secondary));
+            background: linear-gradient(to right, rgba(35, 31, 25, 0.95), rgba(25, 16, 1, 0.8));
+            color: rgb(250, 185, 89);
+
         }
 
         .light-mode .ticker-wrapper {
             background: linear-gradient(90deg, rgba(var(--light-primary), 0.95), rgba(var(--light-primary), 0.8));
-            color: rgb(var(--light-text));
+            color: rgb(252, 255, 246);
         }
 
         .ticker-container {
