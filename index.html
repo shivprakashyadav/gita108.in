@@ -184,7 +184,7 @@
         /* Timeline Section */
         .timeline-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             animation: fadeInUp 2.5s ease-out;
         }
@@ -635,7 +635,95 @@
                 }
             }
         }
+        .week-title {
+        font-size: 16px; /* Smaller font size for week title */
+        color: #555; /* Lighter color for less prominence */
+        margin-bottom: 8px; /* Space between week title and description */
+    }
+    .week-1 {
+        color: #ff6347; /* Tomato */
+    }
 
+    .week-2 {
+        color: #3cb371; /* Medium Sea Green */
+    }
+
+    .week-3 {
+        color: #1e90ff; /* Dodger Blue */
+    }
+
+    .week-4 {
+        color: #ff1493; /* Deep Pink */
+    }
+
+    .week-5 {
+        color: #ffda44; /* Yellow */
+    }
+    .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #888;
+        margin-top: 40px;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+
+    .footer a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .course-description {
+    font-size: 16px;
+    color: #555; /* Subtle gray color for the description */
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.course-start-date {
+    background-color: #3cb371; /* Soft Medium Sea Green background */
+    color: white; /* Text color */
+    font-size: 20px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 5px; /* Rounded corners for the box */
+}
+
+.course-start-date span {
+    font-size: 22px; /* Make the date itself larger */
+    font-weight: bolder;
+}
+.course-start-date span:hover {
+    border: 3px solid white; /* White border on hover */
+    padding: 5px 10px; /* Add padding to create the circular effect */
+    border-radius: 50%; /* Makes the border circular */
+    background-color: rgba(255, 255, 255, 0.3); /* Light background on hover */
+}
+/* Mobile Devices: Break text into two lines */
+@media only screen and (max-width: 600px) {
+    .course-start-date {
+        font-size: 16px; /* Adjust font size */
+        padding: 10px 0; /* Reduce padding on smaller screens */
+    }
+
+    .course-start-date span {
+        display: block; /* Makes the date span display on a new line */
+        font-size: 18px; /* Adjust the font size for mobile */
+    }
+}
+
+
+        
      
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -687,8 +775,10 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>✨ Welcome to Gita108 ✨</h1>
-            <p>Find Clarity, Peace And Purpose Through
-Ancient Wisdom</p>
+            
+              <p>Start your Bhagavad-gita learning journey today!</p>
+                 
+            </div>
         </section>
 
         <!-- Benefits Section -->
@@ -740,26 +830,36 @@ Ancient Wisdom</p>
 
         <!-- Timeline Section -->
         <section>
-            <h2>✨ Your Journey  </h2>
-            <div class="timeline-grid">
-                <div class="timeline-item">
-                    <h3>Week 1-2</h3>
-                    <p>🌱 Foundation & Basics</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Week 3-4</h3>
-                    <p>🧘‍♀️ Mind Mastery</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Week 5-6</h3>
-                    <p>💫 Advanced Practices</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Week 7-8</h3>
-                    <p>✨ Ultimate Transformation</p>
-                </div>
-            </div>
-        </section>
+    <h2>📚 Bhagavad Gita for Beginners: Your Learning Journey</h2>
+    <p class="course-description">
+        Unlock the timeless wisdom of the Bhagavad Gita and embark on a transformative journey. This course is designed for beginners, guiding you through essential teachings and spiritual practices to enrich your daily life.
+    </p>
+    <div class="course-start-date">
+        <strong>🚀 Course Starts On: <span>25th January 2025</span></strong>
+    </div>
+    <div class="timeline-grid">
+        <div class="timeline-item">
+            <h3 class="week-title week-1">Week 1</h3>
+            <p>🤔 <strong>Rethink Everything</strong></p>
+        </div>
+        <div class="timeline-item">
+            <h3 class="week-title week-2">Week 2</h3>
+            <p>🦸‍♂️ <strong>The Hero's Transformation</strong></p>
+        </div>
+        <div class="timeline-item">
+            <h3 class="week-title week-3">Week 3</h3>
+            <p>📖 <strong>The Gita in 45 Minutes</strong></p>
+        </div>
+        <div class="timeline-item">
+            <h3 class="week-title week-4">Week 4</h3>
+            <p>🧘‍♂️ <strong>Authentic Yoga Unveiled</strong></p>
+        </div>
+        <div class="timeline-item">
+            <h3 class="week-title week-5">Week 5</h3>
+            <p>💡 <strong>Breathing Wisdom into Life</strong></p>
+        </div>
+    </div>
+</section>
 
         <!-- Teachers Section -->
         <section>
@@ -770,8 +870,8 @@ Ancient Wisdom</p>
             <img src="images/shiv.jpg" alt="Shivprakash Yadav" class="teacher-image " />
             <h3 style="color: #FFD700;">✨ Shivprakash✨</h3>
             <p><strong>📖 Bhagavad Gita Teacher & Spiritual Mentor</strong></p>
-            <p style="font-style: italic; color: #A9A9A9;">"Helping you unlock life's purpose through ancient wisdom."</p>
-            <p>Shivprakash simplifies the teachings of the Gita, guiding you toward peace, clarity, and mindfulness in modern life.</p>
+            <p style="font-style: italic; color: #A9A9A9;">"Unlocking life's purpose through ancient wisdom"</p>
+            <p>Shivprakash simplifies Gita teachings to guide you toward peace, clarity, and mindfulness.</p>
         </div>
         
         <!-- Teacher 2 -->
@@ -779,8 +879,8 @@ Ancient Wisdom</p>
             <img src="images/Dhiraj.jpg" alt="Dhiraj Soni" class="teacher-image " />
             <h3 style="color: #FFD700;">✨ Dhiraj Soni ✨</h3>
             <p><strong>🙏 Bhakti Practitioner & Wisdom Guide</strong></p>
-            <p style="font-style: italic; color: #A9A9A9;">"Spreading love and devotion through timeless spiritual practices."</p>
-            <p>Dhiraj integrates Bhakti and Gita wisdom, helping you connect deeply with your spiritual self through devotion and practical guidance.</p>
+            <p style="font-style: italic; color: #A9A9A9;">"Spreading love and devotion through spiritual practices"</p>
+            <p>Dhiraj combines Bhakti and Gita wisdom to help you connect with your spiritual self.</p>
         </div>
             </div>
         </section>
@@ -802,32 +902,36 @@ Ancient Wisdom</p>
                         <h3>100%</h3>
                         <p>Satisfaction Rate</p>
                     </div>
+                    <div class="stat-card" onmouseover="celebrate(this)">
+                         <h3>10+</h3>
+                         <p>In-Person Meetups</p>
+                     </div>
                 </div>
             </section>
 
         <!-- Testimonials Section -->
         <section>
-            <h2>💫 Vibe Check from Our Squad</h2>
+            <h2>📢 What Our Students Say</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="quote">"</div>
-                    <p>The practical application of Gita's wisdom to modern workplace challenges has been transformative. I'm handling stress better than ever.</p>
+                    <p>The practical application of Gita's wisdom to modern challenges has been transformative. I’m handling stress and decision-making with much more clarity."</p>
                     <div class="testimonial-author">
                         <div class="author-image">👤</div>
                         <div>
-                            <h4>Rahul Sharma</h4>
-                            <p>Software Engineer</p>
+                            <h4>Tanvi Patil</h4>
+                            <p>Student</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="quote">"</div>
-                    <p>As a busy professional, I was skeptical at first, but the bite-sized lessons and daily practices fit perfectly into my schedule.</p>
+                    <p>As a student with a packed schedule, I was skeptical at first, but the bite-sized lessons and daily practices fit perfectly into my routine. It's been an eye-opener!</p>
                     <div class="testimonial-author">
                         <div class="author-image">👤</div>
                         <div>
-                            <h4>Priya Patel</h4>
-                            <p>Marketing Manager</p>
+                            <h4>Samprit Dhara</h4>
+                            <p>Student</p>
                         </div>
                     </div>
                 </div>
@@ -852,7 +956,7 @@ Ancient Wisdom</p>
                 <div class="faq-item">
                     <h3>How can I join Gita108?</h3>
                     <div class="faq-answer">
-                        <p>You can join Gita108 by signing up on our website. Click on the "Join Now" button to get started!</p>
+                        <p>You can join Gita108 by Clicking on the "Join Now" button to get started!</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -861,32 +965,37 @@ Ancient Wisdom</p>
                         <p>Zero! Just bring your good vibes and curiosity - we'll handle the rest! ✨</p>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Inspiration Section -->
-        <section>
-            <h2>✨ Our Inspiration</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <span class="benefit-icon bounce">🕉️</span>
-                    <h3>Ancient Wisdom</h3>
-                    <p>Timeless teachings from the Bhagavad Gita adapted for modern life.</p>
+                <div class="faq-item">
+                    <h3>How long is the course? 📚</h3>
+                    <div class="faq-answer">
+                        <p>The course is 5 weeks, one hour per week. It commences in January ✨</p>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon bounce">🌟</span>
-                    <h3>Divine Grace</h3>
-                    <p>Guided by the eternal wisdom of Lord Krishna.</p>
+                <div class="faq-item">
+                    <h3>How much does it cost? 📚</h3>
+                    <div class="faq-answer">
+                        <p>This course is FREE. If you wish, you may make a donation for the course. Anything you give will support others in receiving this knowledge.</p>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon bounce">🙏</span>
-                    <h3>Guru Parampara</h3>
-                    <p>Following the authentic lineage of spiritual teachers.</p>
+                <div class="faq-item">
+                    <h3>Which Bhagavad-gita do I need?</h3>
+                    <div class="faq-answer">
+                        <p>We suggest getting the Bhagavad-gita As It Is by A.C. Bhaktivedantha Swami Prabhupada. This is the version we will be using.</p>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon bounce">💫</span>
-                    <h3>Universal Love</h3>
-                    <p>Spreading spiritual knowledge to uplift humanity.</p>
+                <div class="faq-item">
+                    <h3>Is it suitable for children?</h3>
+                    <div class="faq-answer">
+                        <p>We believe anyone the age of 14+ would be able to relate to the course. However, you are welcome to watch the course with your family and children if they are interested in the teachings.</p>
+                    </div>
                 </div>
+                <div class="faq-item">
+                    <h3>I am not religious, is this for me?</h3>
+                    <div class="faq-answer">
+                        <p>The Bhagavad-gita is a universal spiritual book with many lessons. We at Gita108, teach this in a way that makes the wisdom relevant to everyone. All we ask is you come with an open mind and heart.</p>
+                    </div>
+                </div>
+                
             </div>
         </section>
 
@@ -935,72 +1044,55 @@ Ancient Wisdom</p>
     </div>
     <div class="benefits-grid">
         <div class="benefit-card">
-            <span class="benefit-icon bounce">🎯</span>
+            <span class="benefit-icon ">🎯</span>
             <h3>Our Mission</h3>
             <p>To make the timeless wisdom of Bhagavad Gita practical and accessible for everyone seeking purpose and peace in modern life.</p>
         </div>
         
         <div class="benefit-card">
-            <span class="benefit-icon bounce">💫</span>
+            <span class="benefit-icon ">💫</span>
             <h3>Our Approach</h3>
             <p>Interactive live sessions, practical exercises, and a supportive community that helps you apply spiritual wisdom to daily challenges.</p>
         </div>
         
         <div class="benefit-card">
-            <span class="benefit-icon bounce">🤝</span>
+            <span class="benefit-icon ">🤝</span>
             <h3>Our Community</h3>
             <p>A vibrant group of seekers from diverse backgrounds, united in their quest for personal growth and spiritual understanding.</p>
         </div>
         
         <div class="benefit-card">
-            <span class="benefit-icon bounce">💝</span>
+            <span class="benefit-icon ">💝</span>
             <h3>Our Values</h3>
             <p>We believe wisdom should be freely accessible. All our programs are donation-based, ensuring everyone can access this transformative knowledge.</p>
         </div>
     </div>
 
-    <!-- Add key features with icons -->
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <span class="benefit-icon">🎓</span>
-            <p>Expert Guidance</p>
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <span class="benefit-icon">🌟</span>
-            <p>Live Sessions</p>
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <span class="benefit-icon">📱</span>
-            <p>WhatsApp Support</p>
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <span class="benefit-icon">🤲</span>
-            <p>Donation Based</p>
-        </div>
-    </div>
+    
+    <section class="footer">
+    <p>&copy; 2025 Gita108 Wisdom Club. All rights reserved. | Designed with ❤️ by Shivprakash</p>
+</section>
 </section>
         <div class="ticker-wrapper">
             <div class="ticker-container">
                 <!-- First set of items -->
                 <div class="ticker-item">
-                    <span>✨ Join Gita108 Today!</span>
-                    <span>🎯 Master Life's Challenges</span>
-                    <span>🧘‍♀️ Find Inner Peace</span>
-                    <span>💫 Transform Your Life</span>
+                    <span>✨ Join <strong>Gita108</strong> Today!</span>
+                    <span>🚨 Our Bhagavad Gita course starts on <strong>25th January</strong></span>
+                    <span>🚨 Don't miss out – reserve your spot today!</span>
                     <span>✨ Limited spots available!</span>
-                    <span>🌟 Live Sessions Available</span>
+                    <span>🎯 Master Life's Challenges</span>       
                     <span>⚡ Boost Your Spiritual Growth</span>
                     <span>❤️ Join Our Community</span>
                 </div>
 
                 <!-- Duplicate for seamless loop -->
                 <div class="ticker-item">
-                    <span>✨ Join Gita108 Today!</span>
-                    <span>🎯 Master Life's Challenges</span>
-                    <span>🧘‍♀️ Find Inner Peace</span>
-                    <span>💫 Transform Your Life</span>
+                    <span>✨ Join <strong>Gita108</strong> Today!</span>
+                    <span>🚨 Our Bhagavad Gita course starts on <strong>25th January</strong></span>
+                    <span>🚨 Don't miss out – reserve your spot today!</span>
                     <span>✨ Limited spots available!</span>
-                    <span>🌟 Live Sessions Available</span>
+                    <span>🎯 Master Life's Challenges</span>                
                     <span>⚡ Boost Your Spiritual Growth</span>
                     <span>❤️ Join Our Community</span>
                 </div>
