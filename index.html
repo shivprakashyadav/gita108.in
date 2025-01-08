@@ -105,6 +105,12 @@
             margin-bottom: 40px;
             background-size: 200% 200%;
     animation: gradientShift 5s infinite;
+    background-image: url('images/spj.jpeg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    color: #fff; /* Ensures text is readable on the image */
+    position: relative; /* To layer content properly */
         }
 
         .hero h1 {
@@ -728,8 +734,123 @@
         font-size: 18px; /* Adjust the font size for mobile */
     }
 }
+.float-whatsapp {
+    position: fixed;
+    bottom: 90px; /* Positioned above the theme toggle button */
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
 
+.float-whatsapp:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+}
 
+/* Hero section button styles */
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background-color: #25D366;
+    color: white;
+}
+
+.secondary-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:hover {
+    background-color: #128C7E;
+}
+
+.secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .float-whatsapp {
+        bottom: 90px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .hero-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+.hot-tag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, #FF416C, #FF4B2B);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 2px 5px rgba(255, 65, 108, 0.3);
+}
+
+.hero-button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative; /* Added for absolute positioning of hot-tag */
+}
+/* Add mobile responsiveness for the hot tag */
+@media (max-width: 768px) {
+    .hot-tag {
+        font-size: 10px;
+        padding: 3px 6px;
+        top: -8px;
+        right: -8px;
+    }
+}
         
      
     </style>
@@ -779,13 +900,21 @@
 <body class="dark-mode">
     <button class="toggle-button" onclick="toggleTheme()">☀️</button>
     <main>
-        <!-- Hero Section -->
+        <!-- old Hero Section -->
         <section class="hero">
             <h1>✨ Welcome to Gita108 ✨</h1>
             
               <p>Start your Bhagavad-gita learning journey today!</p>
                  
-            </div>
+            <div class="hero-buttons">
+        <a href="https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv" class="hero-button primary-button" target="_blank" rel="noopener noreferrer">
+            Join Gita Course ✨
+            <span class="hot-tag">🔥 HOT</span>
+        </a>
+        <a href="https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv" class="hero-button secondary-button" target="_blank" rel="noopener noreferrer">
+            Join Our Community 🤝
+        </a>
+    </div>
         </section>
 
         <!-- Benefits Section -->
@@ -1116,6 +1245,10 @@
             </div>
         </div>
     </main>
+    <a href="https://wa.me/+919999999999" class="float-whatsapp" target="_blank" rel="noopener noreferrer">
+    💬
+</a>
+
 </body>
 </html>
                         
