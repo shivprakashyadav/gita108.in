@@ -958,6 +958,42 @@
     }
 }
 
+/* perlk list */
+.perks-list {
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(rgba(var(--light-primary), 0.1), rgba(var(--light-secondary), 0.1));
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.dark-mode .perks-list {
+    background: linear-gradient(rgba(var(--dark-primary), 0.1), rgba(var(--dark-secondary), 0.1));
+}
+
+.perk-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    padding: 2px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.perk-item:hover {
+    transform: translateX(5px);
+}
+
+.perk-emoji {
+    font-size: 1.5em;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.perk-text {
+    font-size: 0.95em;
+}
+
         
      
     </style>
@@ -1026,7 +1062,7 @@ function handleSubmit(event) {
     const message = `New Community Join Request:\nName: ${name}\nPhone: ${phone}\nLocation: ${location}`;
     
     // Replace '919999999999' with your actual WhatsApp number
-    const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/918511068998?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp with pre-filled message
     window.open(whatsappUrl, '_blank');
@@ -1398,7 +1434,31 @@ document.getElementById('communityModal').addEventListener('click', function(eve
 <div id="communityModal" class="modal-overlay">
     <div class="modal">
         <button class="modal-close" onclick="closeModal()">×</button>
-        <h2 class="modal-title">🤝 Join Our Community</h2>
+        <h2 class="modal-title">✨ Join Our Spiritual Family ✨</h2>
+        
+        <div class="perks-list">
+            <div class="perk-item">
+                <span class="perk-emoji">🎯</span>
+                <span class="perk-text">Weekly personalized spiritual guidance sessions</span>
+            </div>
+            <div class="perk-item">
+                <span class="perk-emoji">🧘‍♀️</span>
+                <span class="perk-text">Free meditation and yoga workshops</span>
+            </div>
+            <div class="perk-item">
+                <span class="perk-emoji">👥</span>
+                <span class="perk-text">Connect with like-minded spiritual seekers</span>
+            </div>
+            <div class="perk-item">
+                <span class="perk-emoji">🎊</span>
+                <span class="perk-text">Special invites to festivals and community events</span>
+            </div>
+            <div class="perk-item">
+                <span class="perk-emoji">💭</span>
+                <span class="perk-text">24/7 doubt clearing support on WhatsApp</span>
+            </div>
+        </div>
+
         <form id="communityForm" onsubmit="handleSubmit(event)">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -1412,7 +1472,7 @@ document.getElementById('communityModal').addEventListener('click', function(eve
                 <label for="location">Location</label>
                 <input type="text" id="location" name="location" required placeholder="Enter your location">
             </div>
-            <button type="submit" class="submit-button">Submit →</button>
+            <button type="submit" class="submit-button">Join Our Community Now 🚀</button>
         </form>
     </div>
 </div>
