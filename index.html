@@ -993,7 +993,32 @@
 .perk-text {
     font-size: 0.95em;
 }
-
+* Mobile responsiveness */
+@media (max-width: 768px) {
+    .perks-list {
+        margin: 20px 0;
+    padding: 10px;
+    background: linear-gradient(rgba(var(--light-primary), 0.1), rgba(var(--light-secondary), 0.1));
+    border-radius: 12px;
+    margin-bottom: 10px;
+    }
+    .perk-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: -5px;
+    padding: 2px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.perk-emoji {
+    font-size: 1.2em;
+    margin-right: 12px;
+    display: inline-block;
+}
+.perk-text {
+    font-size: 0.5em;
+}
+}
         
      
     </style>
