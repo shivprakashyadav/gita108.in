@@ -74,6 +74,53 @@
             background: linear-gradient(rgba(var(--light-primary), 0.1), rgba(var(--light-secondary), 0.1));
             
         }
+        .dark-mode .card,
+        .dark-mode .hero {
+            background-color: rgb(var(--dark-card));
+            color: rgb(var(--dark-text));
+        }
+        .light-mode .card,
+        .light-mode .hero {
+            background-color: rgb(var(--light-card));
+            color: rgb(var(--light-text));
+        }
+        .light-mode .hero {
+            background: linear-gradient(rgba(var(--light-primary), 0.1), rgba(var(--light-secondary), 0.1));
+            color: rgb(var(--light-text));
+        }.hero-buttons .hero-button {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .hero-buttons .primary-button {
+            background-color: #25D366;
+        }
+
+        .hero-buttons .secondary-button {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .light-mode .hero-buttons .secondary-button {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: rgb(var(--light-text));
+        }
+
+        .hero-buttons .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-buttons .primary-button:hover {
+            background-color: #128C7E;
+        }
+
+        .light-mode .hero-buttons .primary-button:hover {
+            background-color: rgba(20, 150, 80, 1);
+        }
 
         main {
             max-width: 1200px;
