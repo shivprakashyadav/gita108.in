@@ -1183,36 +1183,6 @@ document.getElementById('communityModal').addEventListener('click', function(eve
     }
 });
 </script>
-<script>
-    function openCourseModal() {
-        document.getElementById('courseModal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeCourseModal() {
-        document.getElementById('courseModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    function submitCourseForm(event) {
-        event.preventDefault();
-        
-        const name = document.getElementById('course-name').value;
-        const phone = document.getElementById('course-phone').value;
-        const location = document.getElementById('course-location').value;
-    
-        const message = `New Course Join Request:\nName: ${name}\nPhone: ${phone}\nLocation: ${location}`;
-        const whatsappMessageURL = `https://wa.me/918511068998?text=${encodeURIComponent(message)}`;
-    
-        // Send message and then redirect to WhatsApp group
-        window.open(whatsappMessageURL, '_blank');
-        window.location.href = "https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv";
-    
-        // Reset form and close modal
-        document.getElementById('courseForm').reset();
-        closeCourseModal();
-    }
-    </script>
 </head>
 <body class="dark-mode">
     <button class="toggle-button" onclick="toggleTheme()">☀️</button>
@@ -1223,33 +1193,7 @@ document.getElementById('communityModal').addEventListener('click', function(eve
             <h1>✨ Welcome to Gita108 ✨</h1>
             
               <p>Start your Bhagavad-gita learning journey today!</p>
-              <div id="courseModal" class="modal-overlay">
-                <div class="modal">
-                    <button class="modal-close" onclick="closeCourseModal()">×</button>
-                    <h2 class="modal-title">✨ Join the Gita Course ✨</h2>
-                    
-                    <form id="courseForm" onsubmit="submitCourseForm(event)">
-                        <div class="form-group">
-                            <label for="course-name">Name</label>
-                            <input type="text" id="course-name" name="course-name" required placeholder="Enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="course-phone">Contact Number</label>
-                            <input type="tel" id="course-phone" name="course-phone" required placeholder="Enter your phone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="course-location">Location</label>
-                            <input type="text" id="course-location" name="course-location" required placeholder="Enter your location">
-                        </div>
-                        <button type="submit" class="submit-button">Join the Course Now 🚀</button>
-                    </form>
-                </div>
-            </div>
-             
-            <a href="javascript:void(0)" class="hero-button primary-button" onclick="openCourseModal()">
-                Join Gita Course ✨
-                <span class="hot-tag">🔥 NEW</span>
-            </a>
+                 
             <div class="hero-buttons">
         <a href="https://chat.whatsapp.com/LAYWlTx3xTN2398SC0FpAv" class="hero-button primary-button" target="_blank" rel="noopener noreferrer">
             Join Gita Course ✨
