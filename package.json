@@ -1,0 +1,17 @@
+{
+  "name": "gita108-backend",
+  "version": "1.0.0",
+  "description": "Backend for Gita108 Wisdom Club",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.1",
+    "pdfkit": "^0.13.0",
+    "dotenv": "^16.0.3"
+  }
+}
