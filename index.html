@@ -762,11 +762,20 @@
     }
     .course-description {
     font-size: 16px;
-    color: #555; /* Subtle gray color for the description */
+    color: #d35400;
     margin-top: 10px;
     margin-bottom: 30px;
     text-align: center;
     line-height: 1.5;
+    background-image: linear-gradient(90deg, #f39c12, #e74c3c, #f39c12);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sparkle 4s linear infinite;
+}
+@keyframes sparkle {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
 .course-start-date {
@@ -1098,7 +1107,96 @@
             transition: transform 0.3s ease;
         }
 }
-        
+.sparkling-text {
+  position: relative;
+  display: inline-block;
+  color: #d35400; /* Gita-themed orange */
+  font-weight: bold;
+  font-size: 1.3em;
+  background-image: linear-gradient(90deg, #f39c12, #e74c3c, #f39c12);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sparkle 4s linear infinite;
+}
+
+@keyframes sparkle {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+    
+.accordion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    text-align: center;
+    background: #f8f8f8;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.accordion-button:hover {
+    background: #eee;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px;
+    background: white;
+}
+
+.accordion-content.active {
+    max-height: 500px;
+    padding: 15px;
+    transition: max-height 0.5s ease-in;
+}
+
+.accordion-content ul {
+    padding-left: 18px;
+    margin: 10px 0;
+    list-style: disc;
+}
+
+.hero-button.small-button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 4px 0;
+    background: #f39c12;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hero-button.small-button:hover {
+    background: #e67e22;
+}
+
+.accordion-button.open {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
      
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -1183,6 +1281,22 @@ document.getElementById('communityModal').addEventListener('click', function(eve
     }
 });
 </script>
+<!-- Final Accordion Script -->
+<script>
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            element.innerHTML = element.innerHTML.replace('➖', '➕');
+            element.classList.remove('open');
+        } else {
+            content.classList.add('active');
+            element.innerHTML = element.innerHTML.replace('➕', '➖');
+            element.classList.add('open');
+        }
+    }
+    </script>
+    
 <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body class="dark-mode">
@@ -1253,8 +1367,10 @@ document.getElementById('communityModal').addEventListener('click', function(eve
             </div>
         </section>
 
+   
         <!-- Timeline Section -->
-        <section>
+
+       <!-- <section>
             <h2>📚 Bhagavad Gita for Beginners: Your Learning Journey</h2>
             
             <p class="course-description">
@@ -1295,7 +1411,147 @@ document.getElementById('communityModal').addEventListener('click', function(eve
                     <p class="week-description">Join us for an inspiring closing ceremony 🌟, share experiences 💬, and connect with fellow participants 🤝. A memorable conclusion filled with gratitude 🙏, joy 😊, and surprises 🎁 awaits!</p>
                 </div>
             </div>
-        </section>
+        </section>-->
+
+        <!-- Gita Amrita Course Section -->
+<section>
+    <h2>🌸✨ New Course: Gita Amrita - Complete Chapter-by-Chapter Study ✨🌸</h2>
+    <p class="course-description">
+        Dive deep into all 18 chapters of the Bhagavad Gita with detailed explanations, sloka recitation, and engaging quizzes. Perfect for beginners and seekers who want a guided spiritual journey!
+    </p>
+    <div class="course-start-date">
+        🚀 Starting from <span>23rd March 2025</span> | Every Sunday, 9:30 AM to 10:30 AM (IST)
+    </div>
+
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <span class="benefit-icon">📖</span>
+            <h3>Complete Bhagavad-Gita</h3>
+            <p>All 18 Chapters — Step-by-Step guided study.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">🕒</span>
+            <h3>60 Min Weekly Sessions</h3>
+            <p>Easy to manage in your routine.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">📥</span>
+            <h3>Downloadable Materials</h3>
+            <p>PDF notes and sloka recitation resources.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">❓</span>
+            <h3>Q&A Support</h3>
+            <p>Get your doubts clarified personally.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">📝</span>
+            <h3>Quizzes for Revision</h3>
+            <p>Interactive quizzes to reinforce learning.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">🏅</span>
+            <h3>Completion Certificate</h3>
+            <p>Certificate from Gita Wisdom Club.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">🎁</span>
+            <h3>100% Free</h3>
+            <p>Service to humanity — completely free.</p>
+        </div>
+        <div class="benefit-card">
+            <span class="benefit-icon">💻</span>
+            <h3>Live on Zoom</h3>
+            <p>Interactive sessions conducted live on Zoom with Q&A.</p>
+        </div>
+    </div>
+
+    <div class="hero-buttons" style="margin-top: 30px;">
+        <a href="https://chat.whatsapp.com/FP9gtaU2i3o3a4QVI2NCR4" target="_blank" rel="noopener noreferrer" class="hero-button primary-button">
+            ✨ Join Gita Amrita Course
+        </a>
+        <a href="https://chat.whatsapp.com/HcAfr9InqJSJO9etvzqHBz" target="_blank" rel="noopener noreferrer" class="hero-button secondary-button">
+            🌸 Join Gita Wisdom Club
+        </a>
+    </div>
+</section>
+<!-- Gita Amrita Full Chapter-wise Collapsible Grid Section -->
+<section>
+    <h2>🌸✨ Gita Amrita — Chapter-by-Chapter Course Details ✨🌸</h2>
+    <p class="course-description">
+        Explore each chapter of Bhagavad Gita, along with sub-topics, course material, and quizzes — all neatly organized!
+    </p>
+
+    <div class="accordion">
+
+        <!-- Chapter Template Example (Repeat for Chapters 1 to 18) -->
+
+        <!-- Example Chapter 1 -->
+        <div class="accordion-item">
+            <button class="accordion-button" onclick="toggleAccordion(this)">Chapter 1: Arjuna Vishada Yoga ➕</button>
+            <div class="accordion-content">
+                <ul>
+                    <li>Background of the Battlefield</li>
+                    <li>Arjuna's Dilemma</li>
+                    <li>Krishna as Charioteer</li>
+                    <li>Introduction to Dharma</li>
+                </ul>
+                <a href="#" class="hero-button small-button">📥 Course Material</a><br>
+                <a href="#" class="hero-button small-button">📝 Take Quiz</a>
+            </div>
+        </div>
+        <!-- Example Chapter 1 -->
+        <div class="accordion-item">
+            <button class="accordion-button" onclick="toggleAccordion(this)">Chapter 1: Arjuna Vishada Yoga ➕</button>
+            <div class="accordion-content">
+                <ul>
+                    <li>Background of the Battlefield</li>
+                    <li>Arjuna's Dilemma</li>
+                    <li>Krishna as Charioteer</li>
+                    <li>Introduction to Dharma</li>
+                </ul>
+                <a href="#" class="hero-button small-button">📥 Course Material</a><br>
+                <a href="#" class="hero-button small-button">📝 Take Quiz</a>
+            </div>
+        </div>
+<!-- Example Chapter 1 -->
+<div class="accordion-item">
+    <button class="accordion-button" onclick="toggleAccordion(this)">Chapter 1: Arjuna Vishada Yoga ➕</button>
+    <div class="accordion-content">
+        <ul>
+            <li>Background of the Battlefield</li>
+            <li>Arjuna's Dilemma</li>
+            <li>Krishna as Charioteer</li>
+            <li>Introduction to Dharma</li>
+        </ul>
+        <a href="#" class="hero-button small-button">📥 Course Material</a><br>
+        <a href="#" class="hero-button small-button">📝 Take Quiz</a>
+    </div>
+</div>
+<!-- Example Chapter 1 -->
+<div class="accordion-item">
+    <button class="accordion-button" onclick="toggleAccordion(this)">Chapter 1: Arjuna Vishada Yoga ➕</button>
+    <div class="accordion-content">
+        <ul>
+            <li>Background of the Battlefield</li>
+            <li>Arjuna's Dilemma</li>
+            <li>Krishna as Charioteer</li>
+            <li>Introduction to Dharma</li>
+        </ul>
+        <a href="#" class="hero-button small-button">📥 Course Material</a><br>
+        <a href="#" class="hero-button small-button">📝 Take Quiz</a>
+    </div>
+</div>
+
+
+        <!-- Example for remaining chapters, repeat similar to Chapter 1 -->
+        <!-- Chapter 2 to Chapter 18 -->
+
+    </div>
+</section>
+
+
+
 
         <!-- Teachers Section -->
         <section>
@@ -1535,29 +1791,54 @@ document.getElementById('communityModal').addEventListener('click', function(eve
         <div class="ticker-wrapper">
             <div class="ticker-container">
                 <!-- First set of items -->
-                <div class="ticker-item">
+                <!--<div class="ticker-item">
                     <span>✨ Join <strong>Gita108</strong> Today!</span>
-                    <span>📅 Starts Jan 25 – Register today!</span>
+                    <span>📅 Starts March 25 – Register today!</span>
                     <span>🌈 Unlock wisdom – Sign up today!</span>
                     <span>🎓 Learn the essence of the Bhagavad Gita </span>
                 
-                    <span>📖 Free Gita Course – Reserve today!</span>       
+                    <span>📖 Free Gita Amrita Course – Reserve today!</span>       
                     <span>❤️ Transform your life! Join now!</span>
                     <span>❤️ Join Our Community</span>
                    <span>🚀 Start your journey – Register now!</span>
                 </div>
 
                 <!-- Duplicate for seamless loop -->
+                 <!--
                 <div class="ticker-item">
                     <span>✨ Join <strong>Gita108</strong> Today!</span>
-                    <span>📅 Starts Jan 25 – Register today!</span>
+                    <span>📅 Starts March 25 – Register today!</span>
                     <span>🌈 Unlock wisdom – Sign up today!</span>
                     <span>🎓 Learn the essence of the Bhagavad Gita </span>
                     
-                    <span>📖 Free Gita Course – Reserve today!</span>                
+                    <span>📖 Free Gita Amrita Course – Reserve today!</span>                
                     <span>❤️ Transform your life! Join now!</span>
                     <span>❤️ Join Our Community</span>
                     <span>🚀 Start your journey – Register now!</span>
+                </div>-->
+                <div class="ticker-item">
+                    <span>🌸✨ Join <strong>Gita Amrita</strong> – Full Bhagavad Gita Study!</span>
+                    <span>📅 <strong>Starts 23rd March 2025 – Every Sunday 9:30 AM</strong></span>
+                    <span>📖 Complete Chapter-by-Chapter Course – Free for All!</span>
+                    <span>🕒 60 mins per session!</span>
+                    <span>📥 Downloadable Materials & Sloka Recitation</span>
+                    <span>📝 Quizzes & Doubt Clearing Sessions</span>
+                    <span>🏅 Completion Certificate from Gita Wisdom Club</span>
+                    <span>🎁 <strong>100% Free </strong> – A humble service to humanity</span>
+                    <span>🚀 Start your spiritual journey – Join now!</span>
+                </div>
+                
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-item">
+                    <span>🌸✨ Join <strong>Gita Amrita</strong> – Full Bhagavad Gita Study!</span>
+                    <span>📅 <strong>Starts 23rd March 2025 – Every Sunday 9:30 AM</strong></span>
+                    <span>📖 Complete Chapter-by-Chapter Course – Free for All!</span>
+                    <span>🕒 60 mins per session!</span>
+                    <span>📥 Downloadable Materials & Sloka Recitation</span>
+                    <span>📝 Quizzes & Doubt Clearing Sessions</span>
+                    <span>🏅 Completion Certificate from Gita Wisdom Club</span>
+                    <span>🎁 <strong>100% Free </strong> – A humble service to humanity</span>
+                    <span>🚀 Start your spiritual journey – Join now!</span>
                 </div>
             </div>
         </div>
